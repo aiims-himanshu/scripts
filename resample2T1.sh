@@ -3,8 +3,8 @@
 # ------------------- Configuration -------------------
 
 # Hardcoded base directory (adjust if needed)
-BIDS_DIR="/media/sskgroup/Thesis/Lesion_BIDS"
-PRIMARY_DIR="$BIDS_DIR/Primary"
+BIDS_DIR="/media/sskgroup/Thesis/Lesion_BIDS/BIDS"
+PRIMARY_DIR="/media/sskgroup/Thesis/Lesion_BIDS/BIDS/Primary"
 
 # Enable or disable N4BiasFieldCorrection for FLAIR
 APPLY_N4=1  # set to 0 to skip
@@ -19,7 +19,7 @@ N4CORRECT="N4BiasFieldCorrection"
 
 # ------------------- Processing Loop -------------------
 
-for SUBJ_DIR in "$PRIMARY_DIR"/sub-*/anat; do
+for SUBJ_DIR in $PRIMARY_DIR/sub-*/anat; do
     subj=$(basename "$(dirname "$SUBJ_DIR")")
     echo "🔁 Processing $subj"
 
