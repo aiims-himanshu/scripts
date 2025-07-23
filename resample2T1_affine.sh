@@ -2,8 +2,8 @@
 
 # ------------------- Configuration -------------------
 
-BIDS_ROOT="/media/sskgroup/Thesis/Lesion_BIDS/BIDS"
-DATASETS=("Primary")
+BIDS_ROOT="/home/sskgroup/Documents/Lesion_BIDS/BIDS"
+DATASETS=("Secondary")
 
 export ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=16
 APPLY_N4=1
