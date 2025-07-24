@@ -3,7 +3,7 @@
 # ------------------- Hardcoded Paths -------------------
 
 BIDS_ROOT="/home/sskgroup/Documents/Lesion_BIDS/BIDS"
-OUTPUT_ROOT="/home/sskgroup/Documents/Lesion_BIDS/LST_AI/Primary"
+OUTPUT_ROOT="/home/sskgroup/Documents/Lesion_BIDS/LST_AI/Secondary"
 DATASET="Secondary"
 TEMP_ROOT="$OUTPUT_ROOT/lst_temp"
 
