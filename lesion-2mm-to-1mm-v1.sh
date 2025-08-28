@@ -10,8 +10,8 @@ set -euo pipefail
 # ─────────────────────────────────────────────────────────────
 
 # === HARD-CODE THESE PATHS ===
-INROOT="/media/sskgroup/fast/Lesion/Primary/Lesion_MNI"          # contains *_lesion_MNI2mm.nii.gz
-OUTROOT="/media/sskgroup/fast/Lesion/Primary/Lesion_MNI_1mm"     # where *_lesion_MNI1mm.nii.gz will be written
+INROOT="/media/sskgroup/fast/Lesion/Secondary/lesion_MNI"          # contains *_lesion_MNI2mm.nii.gz
+OUTROOT="/media/sskgroup/fast/Lesion/Secondary/Lesion_MNI_1mm"     # where *_lesion_MNI1mm.nii.gz will be written
 REF1="/media/sskgroup/fast/Lesion/BCBToolKit/Tools/extraFiles/MNI152.nii.gz"   # MNI152 1mm reference
 THREADS=16  # ANTs threads (optional)
 # =============================
