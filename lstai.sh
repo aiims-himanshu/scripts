@@ -2,8 +2,8 @@
 
 # ------------------- Hardcoded Paths -------------------
 
-BIDS_ROOT="/media/sskgroup/Thesis/Lesion_BIDS/BIDS"
-OUTPUT_ROOT="/media/sskgroup/Thesis/Lesion_BIDS/LST_AI/Primary"
+BIDS_ROOT="/home/sskgroup/Documents/Lesion_BIDS/BIDS"
+OUTPUT_ROOT="/home/sskgroup/Documents/Lesion_BIDS/LST_AI/Primary"
 DATASET="Primary"
 TEMP_ROOT="$OUTPUT_ROOT/lst_temp"
 
