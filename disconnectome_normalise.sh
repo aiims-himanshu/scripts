@@ -6,9 +6,9 @@ set -euo pipefail
 # ╰─────────────────────────────────────────────────────────────╯
 # run command ====   bash ./disconnectome_normalise.sh
 # ====== USER CONFIGURATION ======
-INROOT="/media/sskgroup/fast/Lesion/batch1"
-OUTROOT="/media/sskgroup/fast/Lesion/Primary_MNI"
-TMPROOT="/media/sskgroup/fast/Lesion/Primary_MNI_TMP"
+INROOT="/home/sskgroup/Documents/Lesion/Batch"
+OUTROOT="/home/sskgroup/Documents/Lesion/Secondary_MNI"
+TMPROOT="/home/sskgroup/Documents/Lesion/Secondaryy_MNI_TMP"
 BCBTOOLS="/home/sskgroup/Documents/BCBToolKit/Tools"
 
 MNI_TEMPLATE="${BCBTOOLS}/extraFiles/MNI152.nii.gz"
