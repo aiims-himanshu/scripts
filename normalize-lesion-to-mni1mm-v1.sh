@@ -7,8 +7,8 @@ set -euo pipefail
 # ╰─────────────────────────────────────────────────────────────╯
 
 # ======= USER: EDIT THESE =======
-INROOT="/media/sskgroup/fast/Lesion/Primary"  # T1, lesion in native space
-OUTROOT="/media/sskgroup/fast/Lesion/Primary_MNI"
+INROOT="/media/sskgroup/Thesis/lesion/Secondary"  # T1, lesion in native space
+OUTROOT="/media/sskgroup/Thesis/lesion/Secondary_MNI"
 MNI1="/home/sskgroup/Documents/BCBToolKit/Tools/extraFiles/MNI152.nii.gz"
 REFMASK="/home/sskgroup/Documents/BCBToolKit/Tools/extraFiles/MNI152_for_antsBrainExtractionMask.nii.gz"
 BRAINTPL="/home/sskgroup/Documents/BCBToolKit/Tools/extraFiles/MNI152_for_antsBrainExtractionBrain.nii.gz"
