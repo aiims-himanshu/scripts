@@ -16,7 +16,7 @@ MNI_TEMPLATE_WSKULL="${BCBTOOLS}/extraFiles/MNI152_wskull.nii.gz"
 BRAIN_EXTRACTION_PRIOR="${BCBTOOLS}/extraFiles/Priors/brainPrior.nii.gz"
 BRAIN_EXTRACTION_TEMPLATE="${BCBTOOLS}/extraFiles/Priors/brainWithSkullTemplate.nii.gz"
 
-NTHREADS=16                # System total
+NTHREADS=44                # System total
 THREADS_PER_SYN=2          # Threads per SyN process (for ITK/OMP)
 MAX_PARALLEL_SYN=$((NTHREADS/THREADS_PER_SYN))
 LESION_VOX_THRESHOLD=5000
