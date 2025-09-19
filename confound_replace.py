@@ -1,10 +1,15 @@
 #!/usr/bin/env python3
 import os, glob, pandas as pd
 
-# ----- HARD-CODED PATHS -----
-FMRIPREP = "/media/sskgroup/noise/primary/lag_confounds/batch_7"
-LAG_DIR  = "/media/sskgroup/project/Thesis/fmristroke/primary/confounds"
-# ----------------------------
+# ----- HARD-CODED PATHS Primary -----
+# FMRIPREP = "/media/sskgroup/noise/primary/lag_confounds/batch_7"
+# LAG_DIR  = "/media/sskgroup/project/Thesis/fmristroke/primary/confounds"
+
+# -----HARD-CODED PATHS Seconday-------
+FMRIPREP = "/media/speech/v1/Secondary/output_secondary/batch_9"
+LAG_DIR  = "/media/speech/v1/Secondary/lag_confounds"
+
+#---------------------------
 
 lag_files = sorted(glob.glob(os.path.join(LAG_DIR, "sub-*_*_desc-confounds_timeseries.tsv")))
 n_merged = n_skip = 0
