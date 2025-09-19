@@ -6,7 +6,7 @@ import os, glob, pandas as pd
 # LAG_DIR  = "/media/sskgroup/project/Thesis/fmristroke/primary/confounds"
 
 # -----HARD-CODED PATHS Seconday-------
-FMRIPREP = "/media/speech/v1/Secondary/output_secondary/batch_9"
+FMRIPREP = "/media/speech/v1/Secondary/output_secondary/batch_18"
 LAG_DIR  = "/media/speech/v1/Secondary/lag_confounds"
 
 #---------------------------
