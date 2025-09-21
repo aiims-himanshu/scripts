@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+
+#usage note bash ./disconnect_sync.sh
 # ====== USER CONFIGURATION ======
-OUTROOT="/home/speech/Desktop/Secondary_MNI"
-TMPROOT="/home/speech/Desktop/Secondaryy_MNI_TMP"
+OUTROOT="/home/speech/Desktop/Primary_MNI"
+TMPROOT="/home/speech/Desktop/Primary_MNI_TMP"
 BCBTOOLS="/home/speech/Desktop/BCBToolKit/Tools"
 MNI_TEMPLATE="${BCBTOOLS}/extraFiles/MNI152.nii.gz"
-THREADS_PER_SYN=2
+THREADS_PER_SYN=4
 NTHREADS=44
 MAX_PARALLEL_SYN=$((NTHREADS/THREADS_PER_SYN))
 
