@@ -2,7 +2,7 @@
 import os, glob, pandas as pd
 
 # ----- HARD-CODED PATHS -----
-FMRIPREP = "/media/sskgroup/noise/primary/lag_confounds/batch_7"
+FMRIPREP = "/media/sskgroup/noise/primary/lag_confounds/batch_17"
 LAG_DIR  = "/media/sskgroup/project/Thesis/fmristroke/primary/confounds"
 # ----------------------------
 
