@@ -21,11 +21,11 @@ set -euo pipefail
 # Requirements: ANTs (antsRegistration/antsApplyTransforms), FSL (fslmaths, fslval, imcp optional)
 
 # ---------- defaults ----------
-CONN_ROOT="/media/sskgroup/Thesis/functional/primary/data/BIDS/dataset"
-T1_ROOT="/media/sskgroup/Thesis/functional/Primary_Tractron/T1"
-LESION_ROOT="/media/sskgroup/Thesis/functional/Primary_Tractron/Lesion"
-DISC_ROOT="/media/sskgroup/Thesis/functional/Primary_Tractron/Disconnectome"   # optional
-OUT_ROOT="/media/sskgroup/Thesis/functional/Primary_Tractron/derivatives/conn_rois"
+CONN_ROOT="/media/sskgroup/process/secondary/secondayr_lesion/data/BIDS/dataset"
+T1_ROOT="/media/sskgroup/process/secondary/Secondary_Tractron/T1"
+LESION_ROOT="/media/sskgroup/process/secondary/Secondary_Tractron/Lesion"
+DISC_ROOT="/media/sskgroup/process/secondary/Secondary_Tractron/Disconnectome"   # optional
+OUT_ROOT="/media/sskgroup/process/secondary/Secondary_Tractron/conn_rois"
 THREADS="${ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS:-16}"
 IDMAP=""
 
