@@ -6,17 +6,17 @@ set -euo pipefail
 # ╰─────────────────────────────────────────────────────────────╯
 # run command ====   bash ./disconnectome_normalise.sh
 # ====== USER CONFIGURATION ======
-INROOT="/media/sskgroup/fast/Lesion/batch1"
-OUTROOT="/media/sskgroup/fast/Lesion/Primary_MNI"
-TMPROOT="/media/sskgroup/fast/Lesion/Primary_MNI_TMP"
-BCBTOOLS="/home/sskgroup/Documents/BCBToolKit/Tools"
+INROOT="/home/speech/Desktop/Secondary"
+OUTROOT="/home/speech/Desktop/Secondary_MNI"
+TMPROOT="/home/speech/Desktop/Secondaryy_MNI_TMP"
+BCBTOOLS="/home/speech/Desktop/BCBToolKit/Tools"
 
 MNI_TEMPLATE="${BCBTOOLS}/extraFiles/MNI152.nii.gz"
 MNI_TEMPLATE_WSKULL="${BCBTOOLS}/extraFiles/MNI152_wskull.nii.gz"
 BRAIN_EXTRACTION_PRIOR="${BCBTOOLS}/extraFiles/Priors/brainPrior.nii.gz"
 BRAIN_EXTRACTION_TEMPLATE="${BCBTOOLS}/extraFiles/Priors/brainWithSkullTemplate.nii.gz"
 
-NTHREADS=16                # System total
+NTHREADS=44                # System total
 THREADS_PER_SYN=2          # Threads per SyN process (for ITK/OMP)
 MAX_PARALLEL_SYN=$((NTHREADS/THREADS_PER_SYN))
 LESION_VOX_THRESHOLD=5000
