@@ -4,17 +4,16 @@ set -euo pipefail
 # ─────────────────────────────────────────────────────────────
 # enantiomorphic-fill-v1.sh
 # Create an enantiomorphically-filled T1 in native space.
+# Extension-Agnostic: Automatically accepts .nii & .nii.gz
 #
 # USAGE:
 #   bash enantiomorphic-fill-v1.sh <SUBJECT> <INROOT> <OUTROOT> <DO_RIGID> <THREADS>
 #     SUBJECT   : subject ID (e.g., sub-93)
-#     INROOT    : input dir with ${SUBJECT}_T1w.nii.gz and ${SUBJECT}_label-lesion_roi.nii.gz
+#     INROOT    : input dir with ${SUBJECT}_T1w.nii.gz or .nii
+#                 and ${SUBJECT}_label-lesion_roi.nii.gz or .nii
 #     OUTROOT   : output root (writes ${OUTROOT}/${SUBJECT}/enfill_v1/)
 #     DO_RIGID  : 1 = use rigid alignment (recommended), 0 = skip (fast)
 #     THREADS   : number of ANTs threads to use
-#
-# DEPENDS: FSL (fslmaths, fslcpgeom, fslreorient2std, fslswapdim, overlay, slices)
-#          ANTs (antsRegistrationSyN.sh, antsApplyTransforms) [if DO_RIGID=1]
 # ─────────────────────────────────────────────────────────────
 
 SUB="${1:?sub-XX}"
@@ -32,10 +31,25 @@ if [[ "$DO_RIGID" -eq 1 ]]; then
   need antsRegistrationSyN.sh; need antsApplyTransforms
 fi
 
-T1="${INROOT}/${SUB}_T1w.nii.gz"
-LES="${INROOT}/${SUB}_label-lesion_roi.nii.gz"
-[[ -f "$T1"  ]] || { echo "[ERR] Missing $T1"; exit 1; }
-[[ -f "$LES" ]] || { echo "[ERR] Missing $LES"; exit 1; }
+# --- FIX: Dynamically detect T1 file extension (.nii or .nii.gz) ---
+T1=""
+if [[ -f "${INROOT}/${SUB}_T1w.nii.gz" ]]; then
+  T1="${INROOT}/${SUB}_T1w.nii.gz"
+elif [[ -f "${INROOT}/${SUB}_T1w.nii" ]]; then
+  T1="${INROOT}/${SUB}_T1w.nii"
+else
+  echo "[ERR] Missing T1 image file (.nii or .nii.gz) for $SUB"; exit 1
+fi
+
+# --- FIX: Dynamically detect Lesion Mask file extension (.nii or .nii.gz) ---
+LES=""
+if [[ -f "${INROOT}/${SUB}_label-lesion_roi.nii.gz" ]]; then
+  LES="${INROOT}/${SUB}_label-lesion_roi.nii.gz"
+elif [[ -f "${INROOT}/${SUB}_label-lesion_roi.nii" ]]; then
+  LES="${INROOT}/${SUB}_label-lesion_roi.nii"
+else
+  echo "[ERR] Missing Lesion mask file (.nii or .nii.gz) for $SUB"; exit 1
+fi
 
 OD="${OUTROOT}/${SUB}/enfill_v1"
 LD="${OD}/logs"; QCD="${OD}/qc"
@@ -63,7 +77,7 @@ MIR_ALIGNED="${OD}/${SUB}_T1w_mirror_on_orig.nii.gz"
 if [[ "$DO_RIGID" -eq 1 ]]; then
   echo "[*] $SUB: rigid alignment of mirrored→original with lesion-excluded masks"
 
-  # Make a simple heuristic brainmask (or supply your own)
+  # Make a simple heuristic brainmask
   if [[ ! -f "${OD}/${SUB}_brainmask_std.nii.gz" ]]; then
     fslmaths "${OD}/${SUB}_T1w_std.nii.gz" -bin -dilM -s 2 -thr 0.1 -bin "${OD}/${SUB}_brainmask_std.nii.gz"
   fi

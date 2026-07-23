@@ -5,7 +5,7 @@ set -euo pipefail
 # - fix ownership and permissions on the full tree
 # - replace FreeSurfer symlinks inside sourcedata/freesurfer with real files
 
-ROOT_DIR="${1:-/home/sskgroup/Documents/fmriprep_ch}"
+ROOT_DIR="${1:-/home/sskgroup/Documents/output/fmriprep24}"
 TARGET_USER="${SUDO_USER:-sskgroup}"
 TARGET_GROUP="$(id -gn "$TARGET_USER" 2>/dev/null || echo sskgroup)"
 

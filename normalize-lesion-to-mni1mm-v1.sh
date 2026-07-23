@@ -7,14 +7,14 @@ set -euo pipefail
 # ╰─────────────────────────────────────────────────────────────╯
 
 # ======= USER: EDIT THESE =======
-INROOT="/media/sskgroup/Thesis/lesion/Secondary"  # T1, lesion in native space
-OUTROOT="/media/sskgroup/Thesis/lesion/Secondary_MNI"
+INROOT="/home/sskgroup/Documents/Lesion/Primary"  # T1, lesion in native space
+OUTROOT="/home/sskgroup/Documents/Lesion/Primary_MNI"
 MNI1="/home/sskgroup/Documents/BCBToolKit/Tools/extraFiles/MNI152.nii.gz"
 REFMASK="/home/sskgroup/Documents/BCBToolKit/Tools/extraFiles/MNI152_for_antsBrainExtractionMask.nii.gz"
 BRAINTPL="/home/sskgroup/Documents/BCBToolKit/Tools/extraFiles/MNI152_for_antsBrainExtractionBrain.nii.gz"
 ENFILL_SCRIPT="/home/sskgroup/Git/scripts/enantiomorphic-fill-v1.sh"
-N_THREADS=12
-LESION_VOX_THRESHOLD=5000
+N_THREADS=16
+LESION_VOX_THRESHOLD=1000
 # ================================
 
 export ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=${N_THREADS}

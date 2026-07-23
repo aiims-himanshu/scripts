@@ -2,7 +2,7 @@
 
 # ------------------- Configuration -------------------
 
-BIDS_ROOT="/home/sskgroup/Documents/Lesion_BIDS/BIDS"
+BIDS_ROOT="/home/sskgroup/Documents/BIDS"
 DATASETS=("Secondary")
 
 export ITK_GLOBAL_DEFAULT_NUMBER_OF_THREADS=16
