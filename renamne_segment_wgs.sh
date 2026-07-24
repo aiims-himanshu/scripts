@@ -21,7 +21,7 @@ log() {
 }
 
 DRY_RUN="${DRY_RUN:-0}"
-BATCH_DIR="/media/sskgroup/Thesis/functional/fmriprep_24/batch_7"
+BATCH_DIR="/media/sskgroup/Thesis/functional/fmriprep_24/batch_8"
 
 [[ -d "$BATCH_DIR" ]] || die "Batch directory not found: $BATCH_DIR"
 
